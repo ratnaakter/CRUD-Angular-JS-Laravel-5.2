@@ -37,6 +37,6 @@ Route::post('save',['as'=>'save','uses'=>'AngularController@save']);
     Route::get('totalItemsLength',['as'=>'totalItemsLength','uses'=>'AngularController@totalItemsLength']);
     //-------------------------
     Route::post('update', ['as'=>'update', 'uses'=> 'AngularController@update']);
-    Route::get('delete/{id}',['as'=>'delete', 'uses'=> 'AngularController@delete@delete']);
+    Route::get('delete/{id}',['as'=>'delete', 'uses'=> 'AngularController@delete']);
 
 });
