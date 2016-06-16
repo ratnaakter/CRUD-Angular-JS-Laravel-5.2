@@ -27,16 +27,38 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
-Route::get('/',['as'=>'info','uses'=>'AngularController@show_angular_page']);
-Route::post('save',['as'=>'save','uses'=>'AngularController@save']);
 
-    //--------------Using angular show data with pagination
-    Route::get('angular/show/{pagID}',['as'=>'angular.show','uses'=>'AngularController@show_angular']);//Response URL
-    
-    Route::get('totalItemsLength',['as'=>'totalItemsLength','uses'=>'AngularController@totalItemsLength']);
-    //-------------------------
-    Route::post('update', ['as'=>'update', 'uses'=> 'AngularController@update']);
-    Route::get('delete/{id}',['as'=>'delete', 'uses'=> 'AngularController@delete']);
+Route::get('/',[
+    'as'=>'info',
+    'uses'=>'AngularController@show_angular_page'
+]);
+Route::post('save',[
+    'as'=>'save',
+    'uses'=>'AngularController@save'
+]);
+//--------------Using angular show data with pagination
+Route::get('angular/show/{pagID}',[
+    'as'=>'angular.show',
+    'uses'=>'AngularController@show_angular'
+]);//Response URL
+
+Route::get('totalItemsLength',[
+    'as'=>'totalItemsLength',
+    'uses'=>'AngularController@totalItemsLength'
+]);
+//-------------------------
+Route::post('update', [
+    'as'=>'update',
+    'uses'=> 'AngularController@update'
+]);
+Route::get('delete/{id}',[
+    'as'=>'delete',
+    'uses'=> 'AngularController@delete'
+]);
+
+Route::get('shopping/cart',[
+    'as'=>'shopping.cart',
+    'uses'=>'AngularController@shopping_cart_create'
+]);
 
 });

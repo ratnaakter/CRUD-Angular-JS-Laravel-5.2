@@ -97,4 +97,9 @@ class AngularController extends Controller
         return "Employee record successfully deleted #";
 
     }
+    public function shopping_cart_create()
+    {
+        return View('shopping_cart');
+    }
+
 }
